@@ -7,26 +7,11 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const csvFileInput = document.getElementById('csvFileInput'); // CSV file input
-const table = document.getElementById('editableTable'); // Editable table
+const table = document.getElementById('itemsTable');
 
 let currentEditableCell = null; // Track the currently editable cell
 let preValue = 0; 
 
-// Modal elements
-const modal = document.getElementById('modal');
-const modalMessage = document.getElementById('modal-message');
-const modalClose = document.getElementById('modal-close');
-
-// Show modal function
-function showModal(message) {
-    modalMessage.textContent = message;
-    modal.style.display = 'block';
-}
-
-// Close modal
-modalClose.addEventListener('click', function() {
-    modal.style.display = 'none';
-});
 
 // Toggle menu and button appearance
 hamburger.addEventListener('click', function(event) {
