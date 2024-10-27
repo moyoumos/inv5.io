@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/@supabase/supabase-js"></script>
-    <script src="app.js" defer></script>    
-    <title>Table with Menu</title>
+    <script src="app.js" defer></script>
+    <title>Items Table</title>
 </head>
 <body>
     <div class="container">
-        <!-- Menu and Hamburger Icon -->
         <div class="menu-container">
             <div id="hamburger" class="hamburger">
                 <div class="line"></div>
@@ -28,21 +27,20 @@
             </div>
         </div>
 
-        <!-- Table for Items -->
-        <h2>Items:</h2>
+        <h2>ITEMS:</h2>
         <div class="table-container">
             <table id="itemsTable">
                 <thead>
                     <tr>
                         <th>id</th>
                         <th>name</th>
-                        <th>qntty</th>
+                        <th>quantity</th>
                         <th>price</th>
-                        <th>rmrqs</th>
+                        <th>remarks</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Rows will be populated here from items table in Supabase db -->
+                    <!-- Rows will be populated here from the items table in Supabase db -->
                 </tbody>
             </table>
         </div>
