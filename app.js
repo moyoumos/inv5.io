@@ -9,6 +9,7 @@ function itemTable() {
         items: [],         // Array to hold items from the database
         loading: true,     // Loading state
         error: '',         // Error message
+        menuActive: false, // Menu toggle state
 
         async fetchItems() {
             this.loading = true;
@@ -26,9 +27,24 @@ function itemTable() {
             this.loading = false;
         },
 
-        // Alpine.js init hook to fetch data when the component loads
+        // Toggle menu visibility
+        toggleMenu() {
+            this.menuActive = !this.menuActive;
+        },
+
+        // Close menu when clicking outside
+        closeMenuOnClickOutside(event) {
+            const menu = document.getElementById('menu');
+            const hamburger = document.getElementById('hamburger');
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                this.menuActive = false;
+            }
+        },
+
+        // Alpine.js init hook to fetch data and add event listener when the component loads
         init() {
             this.fetchItems();
+            document.addEventListener('click', this.closeMenuOnClickOutside.bind(this));
         }
     }
 }
