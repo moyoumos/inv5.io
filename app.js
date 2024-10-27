@@ -64,25 +64,6 @@ function restrictToFloat2dec(event) {
 
 // Function to make the cell non-editable and save changes
 function makeCellNonEditable(cell) {
-    // const columnIndex = cell.cellIndex; // Get the index of the cell
-    // const value = cell.textContent.trim();
-    // // Validate the input for Qntty and Price columns
-    // if (columnIndex === 2) { // Qntty column
-    //     // if (!/^\d+$/.test(value)) { // Only allow integers
-    //     //     showModal('Please enter a valid integer for Quantity.');
-    //     //     cell.textContent = preValue;
-    //     //     cell.contentEditable = true;
-    //     //     cell.focus();
-    //     // }
-    // } else if (columnIndex === 3) { // Price column
-    //     if (!/^\d+(\.\d{1,2})?$/.test(value)) { // Only allow floats with up to 2 decimals
-    //         showModal('Please enter a valid number for Price (e.g., 10.99).');
-    //         cell.textContent = preValue;
-    //         cell.contentEditable = true;
-    //         cell.focus();
-    //     }
-    // }
-    // else   
     cell.contentEditable = false;
 }
 
@@ -95,7 +76,6 @@ table.addEventListener('dblclick', function(event) {
         if (currentEditableCell && currentEditableCell !== target) {
             makeCellNonEditable(currentEditableCell);
         }
-
         // Make the clicked cell editable
         makeCellEditable(target);
         currentEditableCell = target; // Set the current editable cell
