@@ -3,44 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpine.js with Supabase Data</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/@supabase/supabase-js" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="app.js" defer></script>
+    <title>Table with Menu</title>
 </head>
-<body>
-    <div class="container" x-data="itemTable()">
+<body x-data="tableApp">
+    <div class="container">
+        <!-- Menu Structure -->
         <div class="menu-container">
-            <div id="hamburger" class="hamburger">
+            <div id="hamburger" class="hamburger" @click="toggleMenu()">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            <div id="menu" class="menu">
+            <div id="menu" class="menu" :class="{ 'active': isMenuOpen }">
                 <ul>
                     <li><a href="#"><i class="icon-home"></i>Home</a></li>
                     <li><a href="#"><i class="icon-issues"></i>Issues</a></li>
-                    <li><a href="#"><i class="icon-pull-requests"></i>Pull requests</a></li>
+                    <li><a href="#"><i class="icon-pull-requests"></i>Pull Requests</a></li>
                     <li><a href="#"><i class="icon-projects"></i>Projects</a></li>
                     <li><a href="#"><i class="icon-discussions"></i>Discussions</a></li>
                 </ul>
             </div>
         </div>
 
+        <!-- Table for Items -->
         <h2>ITEMS:</h2>
         <div class="table-container">
             <table id="itemsTable">
                 <thead>
                     <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>qntty</th>
-                        <th>price</th>
-                        <th>rmrqs</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Remarks</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Loop through items with Alpine.js -->
                     <template x-for="item in items" :key="item.id">
                         <tr>
                             <td x-text="item.id"></td>
@@ -53,11 +55,6 @@
                 </tbody>
             </table>
         </div>
-
-        <p x-show="loading" class="mt-4 text-blue-500">Loading...</p>
-        <p x-show="error" class="mt-4 text-red-500" x-text="error"></p>
     </div>
-
-    <script src="app.js"></script>
 </body>
 </html>
