@@ -11,6 +11,7 @@ body {
     width: 100%;
 }
 
+/* Link Styles */
 a {
     color: #0366d6;
     text-decoration: none;
@@ -30,11 +31,13 @@ a:hover {
     box-shadow: 0 1px 3px rgba(27,31,35,0.12), 0 1px 2px rgba(27,31,35,0.24);
 }
 
+/* Table Container */
 .table-container {
     max-height: 400px; /* Set a maximum height for the table */
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ddd; /* Optional: add border around table */
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -47,7 +50,7 @@ th, td {
 }
 
 td {
-    cursor: pointer;
+    cursor: pointer; /* Indicate clickable cells */
 }
 
 th {
@@ -85,54 +88,9 @@ footer {
     transition: all 0.3s ease;
 }
 
+/* Hamburger Menu Animation */
 .hamburger.open .line {
-    background-color: red;
+    background-color: red; /* Change color when open */
 }
 
 /* Dropdown Menu Styles */
-.menu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    z-index: 2;
-}
-
-.menu.active {
-    display: block;
-}
-
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu ul li {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.menu ul li a {
-    text-decoration: none;
-    color: #333;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.menu ul li a i {
-    margin-right: 10px;
-    font-size: 16px;
-    color: #0366d6;
-}
-
-.menu ul li a:hover {
-    background-color: #f0f0f0;
-}
