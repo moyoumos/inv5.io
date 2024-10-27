@@ -27,32 +27,23 @@
             </div>
         </div>
 
-        <h2>Editable Table</h2>
-
-        <!-- CSV file input -->
-        <input type="file" id="csvFileInput" accept=".csv">
+        <h2>ITEMS</h2>
         <div class="table-container">
-        <table id="editableTable">
+        <table id="itemsTable">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Qntty</th>
-                    <th>Price</th>
-                    <th>Rmrqs</th>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>qntty</th>
+                    <th>price</th>
+                    <th>rmrqs</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Rows will be populated here from CSV -->
+                <!-- Rows will be populated here from items table in Supabase db -->
             </tbody>
         </table>
       </div>
     </div>
-    <div id="modal" class="modal">
-      <div class="modal-content">
-          <span id="modal-close" class="modal-close">&times;</span>
-          <p id="modal-message"></p>
-      </div>
-  </div>
 </body>
 </html>
