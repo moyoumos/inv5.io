@@ -1,34 +1,16 @@
 // Get elements for the menu
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
-const csvFileInput = document.getElementById('csvFileInput'); // CSV file input
-const table = document.getElementById('editableTable'); // Editable table
+const table = document.getElementById('itemsTable'); // Editable table
 
 let currentEditableCell = null; // Track the currently editable cell
 let preValue = 0; 
-
-// Modal elements
-const modal = document.getElementById('modal');
-const modalMessage = document.getElementById('modal-message');
-const modalClose = document.getElementById('modal-close');
-
-// Show modal function
-function showModal(message) {
-    modalMessage.textContent = message;
-    modal.style.display = 'block';
-}
-
-// Close modal
-modalClose.addEventListener('click', function() {
-    modal.style.display = 'none';
-});
 
 // Toggle menu and button appearance
 hamburger.addEventListener('click', function(event) {
     event.stopPropagation();  // Prevent closing when clicking on the menu
     menu.classList.toggle('active');
     hamburger.classList.toggle('open');
-
     // Change button lines to 'X'
     if (hamburger.classList.contains('open')) {
         hamburger.innerHTML = '<div class="line" style="transform: rotate(45deg);"></div><div class="line" style="opacity: 0;"></div><div class="line" style="transform: rotate(-45deg);"></div>';
@@ -140,38 +122,3 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Function to populate the table from CSV
-function populateTableFromCSV(csvData) {
-    const rows = csvData.split('\n');
-    const tableBody = table.querySelector('tbody');
-    // Clear existing table rows (except the header)
-    tableBody.innerHTML = '';
-    // Populate table rows from CSV
-    rows.forEach((row, index) => {
-        const columns = row.split(',');
-        // Skip empty rows
-        if (columns.length === 1 && columns[0].trim() === '') return;
-        // Create a new row
-        const tr = document.createElement('tr');
-        // Append columns (cells) to the row
-        columns.forEach(col => {
-            const td = document.createElement('td');
-            td.textContent = col.trim();
-            tr.appendChild(td);
-        });
-        tableBody.appendChild(tr);
-    });
-}
-
-// CSV file upload handling
-csvFileInput.addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const csvData = e.target.result;
-            populateTableFromCSV(csvData);
-        };
-        reader.readAsText(file);
-    }
-});
