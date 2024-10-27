@@ -10,15 +10,13 @@
 </head>
 <body>
     <div class="container" x-data="itemTable()">
-        <!-- Menu Toggle Button -->
         <div class="menu-container">
-            <div id="hamburger" class="hamburger" @click="toggleMenu">
+            <div id="hamburger" class="hamburger">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            <!-- Dropdown Menu -->
-            <div id="menu" class="menu" :class="{ 'active': menuActive }">
+            <div id="menu" class="menu">
                 <ul>
                     <li><a href="#"><i class="icon-home"></i>Home</a></li>
                     <li><a href="#"><i class="icon-issues"></i>Issues</a></li>
