@@ -12,15 +12,19 @@ async function fetchItems() {
     const { data, error } = await supabase
         .from('items')
         .select('*');
-
     if (error) {
         console.error('Error fetching items:', error);
+        alert('Error fetching items: ' + error.message); // Alert to see the error in the UI
         return;
     }
-
-    // Populate the table with fetched data
-    populateTable(data);
+    if (data.length === 0) {
+        console.log('No items found.');
+        alert('No items found in the database.'); // Alert if no data is returned
+    } else {
+        populateTable(data);
+    }
 }
+
 
 // Function to populate the table with item data
 function populateTable(items) {
