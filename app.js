@@ -1,7 +1,7 @@
 // Initialize Supabase client
 const supabaseUrl = 'https://gakwgsmogfbwhfuyjckn.supabase.co';
 const supabaseKey = 'YOUR_SUPABASE_KEY';
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 // Define Alpine.js component
 function itemTable() {
