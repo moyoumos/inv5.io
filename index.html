@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <title>Editable Table with Menu</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-container">
+            <div id="hamburger" class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div id="menu" class="menu">
+                <ul>
+                    <li><a href="#"><i class="icon-home"></i>Home</a></li>
+                    <li><a href="#"><i class="icon-issues"></i>Issues</a></li>
+                    <li><a href="#"><i class="icon-pull-requests"></i>Pull requests</a></li>
+                    <li><a href="#"><i class="icon-projects"></i>Projects</a></li>
+                    <li><a href="#"><i class="icon-discussions"></i>Discussions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Editable Table</h2>
+
+        <!-- CSV file input -->
+        <input type="file" id="csvFileInput" accept=".csv">
+        <div class="table-container">
+        <table id="editableTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Qntty</th>
+                    <th>Price</th>
+                    <th>Rmrqs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated here from CSV -->
+            </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span id="modal-close" class="modal-close">&times;</span>
+          <p id="modal-message"></p>
+      </div>
+  </div>
+</body>
+</html>
