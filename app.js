@@ -18,7 +18,7 @@ if (window.supabase) {
                 console.error('Error fetching items:', error);
             } else {
                 console.log('Fetched items:', data);
-                // Populate your table or UI here based on 'data'
+                populateTable(data);
             }
         } catch (err) {
             console.error('Unexpected error:', err);
@@ -29,4 +29,21 @@ if (window.supabase) {
     fetchItems();
 } else {
     console.error('Supabase did not load correctly');
+}
+
+function populateTable(items) {
+    const tableBody = document.querySelector('#itemsTable tbody');
+    tableBody.innerHTML = ''; // Clear any existing rows
+
+    items.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td>${item.qntty}</td>
+            <td>${item.price}</td>
+            <td>${item.rmrqs}</td>
+        `;
+        tableBody.appendChild(row);
+    });
 }
