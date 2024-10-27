@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
-    <title>Table and Menu</title>
+    <title>Items Table</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://unpkg.com/@supabase/supabase-js" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script> <!-- Include Alpine.js -->
 </head>
 <body>
     <div class="container">
+        <!-- Hamburger Menu -->
         <div class="menu-container">
             <div id="hamburger" class="hamburger">
                 <div class="line"></div>
@@ -17,32 +19,34 @@
             </div>
             <div id="menu" class="menu">
                 <ul>
-                    <li><a href="#"><i class="icon-home"></i>Home</a></li>
-                    <li><a href="#"><i class="icon-issues"></i>Issues</a></li>
-                    <li><a href="#"><i class="icon-pull-requests"></i>Pull requests</a></li>
-                    <li><a href="#"><i class="icon-projects"></i>Projects</a></li>
-                    <li><a href="#"><i class="icon-discussions"></i>Discussions</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
                 </ul>
             </div>
         </div>
 
-        <h2>Items: </h2>
-        <div class="table-container">
+        <h1>Items List</h1>
         <table id="itemsTable">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>ID</th>
                     <th>Name</th>
-                    <th>Qntty</th>
+                    <th>Quantity</th>
                     <th>Price</th>
-                    <th>Rmrqs</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Rows will be populated here-->
+                <!-- Table rows will be populated by JavaScript -->
             </tbody>
         </table>
-      </div>
     </div>
+
+    <footer>
+        <p>© 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js" defer></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
