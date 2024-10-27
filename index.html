@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
-    <title>Editable Table with Menu</title>
+    <title>Table and Menu</title>
 </head>
 <body>
     <div class="container">
@@ -26,12 +26,9 @@
             </div>
         </div>
 
-        <h2>Editable Table</h2>
-
-        <!-- CSV file input -->
-        <input type="file" id="csvFileInput" accept=".csv">
+        <h2>Items: </h2>
         <div class="table-container">
-        <table id="editableTable">
+        <table id="itemsTable">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -42,16 +39,10 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Rows will be populated here from CSV -->
+                <!-- Rows will be populated here-->
             </tbody>
         </table>
       </div>
     </div>
-    <div id="modal" class="modal">
-      <div class="modal-content">
-          <span id="modal-close" class="modal-close">&times;</span>
-          <p id="modal-message"></p>
-      </div>
-  </div>
 </body>
 </html>
