@@ -1,11 +1,11 @@
 // Confirm Supabase library has loaded before initialization
-if (supabase) {
-    console.log('Initializing Supabase client...');
+if (window.supabase) {
+    console.log('Initializing Supabase client');
 
     // Initialize the client
     const supabaseUrl = 'https://gakwgsmogfbwhfuyjckn.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdha3dnc21vZ2Zid2hmdXlqY2tuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzAwMzQ2MjUsImV4cCI6MjA0NTYxMDYyNX0.z62vWuiYLoDKGrmr3oCx7w0P465p07DzSpApYdt8p4Q';
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
     // Log to confirm client creation
     console.log('Supabase client initialized:', supabase);
