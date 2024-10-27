@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="app.js" defer></script>
     <title>Table with Menu</title>
 </head>
-<body x-data="tableApp" x-init="init()">
-    <div class="container">
+<body>
+    <div class="container" x-data="tableApp()">
         <!-- Menu Structure -->
         <div class="menu-container">
-            <div id="hamburger" class="hamburger" @click="toggleMenu">
+            <div @click="toggleMenu" id="hamburger" class="hamburger">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            <div id="menu" class="menu" :class="{ 'active': isMenuOpen }">
+            <div x-show="menuOpen" @click.away="menuOpen = false" id="menu" class="menu">
                 <ul>
                     <li><a href="#"><i class="icon-home"></i>Home</a></li>
                     <li><a href="#"><i class="icon-issues"></i>Issues</a></li>
