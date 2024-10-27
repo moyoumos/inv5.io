@@ -145,11 +145,11 @@ document.addEventListener('click', function(event) {
     }
 });
 
-async function fetchProfiles() {
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('*');
 
+async function fetchItems() {
+  const { data, error } = await supabase
+    .from('items')
+    .select('*');
   if (error) {
     console.error('Error fetching profiles:', error);
   } else {
@@ -157,5 +157,5 @@ async function fetchProfiles() {
   }
 }
 
-fetchProfiles();
+fetchItems();
 
