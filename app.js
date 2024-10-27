@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log('Supabase client initialized:', window.supabase);
     } else {
-        console.error('Supabase library did not load correctly.');
+        console.error('Supabase library did not load correctly...');
         return;
     }
 
