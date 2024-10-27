@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Check if createClient is available
     if (typeof supabase === 'undefined' || typeof supabase.createClient !== 'function') {
-        console.error('Supabase library did not load correctly.');
+        console.error('Supabase library did not load correctly.'); else console.log('Supabase client');
         return;
     }
     
